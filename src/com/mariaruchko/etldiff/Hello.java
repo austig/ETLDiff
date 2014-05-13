@@ -31,10 +31,11 @@ public class Hello {
 		BufferedReader inputStream = null;
 		String repository1=null;
 		String repository2=null;
+                String outputFileName=null;
 		
 		try{
 			inputStream =
-				new BufferedReader(new FileReader("/Users/maria/Documents/workspace/etl_compare/etl_compare.properties"));
+				new BufferedReader(new FileReader(args[0]));
 			
 
 			Parameters.putParameters(inputStream);
@@ -43,6 +44,7 @@ public class Hello {
 
 				repository1=Parameters.get("repository1").trim();
 				repository2=Parameters.get("repository2").trim();
+				outputFileName=Parameters.get("output").trim();
 			}catch(Exception Ex){
 				//System.out.print("!!!"+Ex.getMessage());
 			}
@@ -102,7 +104,7 @@ public class Hello {
 
 		try {
 			outputStream =
-				new PrintWriter(new FileWriter("/Users/maria/Documents/workspace/etl_compare/compare_result.html"));
+				new PrintWriter(new FileWriter(outputFileName));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

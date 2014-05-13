@@ -18,6 +18,7 @@ public class Parameters {
 
 				put(l, "REPOSITORY_1", "repository1");		
 				put(l, "REPOSITORY_2", "repository2");
+				put(l, "OUTPUT", "output");
 
 			}
 		}
